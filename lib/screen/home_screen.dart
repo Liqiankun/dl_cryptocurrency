@@ -49,8 +49,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   _page = 0;
                 });
               },
-              child: ListView.builder(
+              child: ListView.separated(
                 itemCount: coins.length,
+                separatorBuilder: (context, index) {
+                  return Divider(color: Colors.grey[600]);
+                },
                 itemBuilder: (BuildContext context, int index) {
                   final coin = coins[index];
                   return ListTile(

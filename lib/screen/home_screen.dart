@@ -21,14 +21,15 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Theme.of(context).primaryColor,
-            Colors.grey[900],
-          ],
-        )),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Theme.of(context).primaryColor,
+              Colors.grey[900],
+            ],
+          ),
+        ),
         child: FutureBuilder(
           future: _cryptoRepository.getTopCoins(page: _page),
           builder: (context, snapshot) {
@@ -65,15 +66,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    title: Text(coin.fullName,
-                        style: TextStyle(color: Colors.white)),
-                    subtitle: Text(coin.name,
-                        style: TextStyle(color: Colors.white70)),
-                    trailing: Text('\$${coin.price.toStringAsFixed(4)}',
-                        style: TextStyle(
-                          color: Theme.of(context).accentColor,
-                          fontWeight: FontWeight.w600,
-                        )),
+                    title: Text(
+                      coin.fullName,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    subtitle: Text(
+                      coin.name,
+                      style: TextStyle(color: Colors.white70),
+                    ),
+                    trailing: Text(
+                      '\$${coin.price.toStringAsFixed(4)}',
+                      style: TextStyle(
+                        color: Theme.of(context).accentColor,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   );
                 },
               ),

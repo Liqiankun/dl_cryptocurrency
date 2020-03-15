@@ -1,6 +1,4 @@
-# dl_cryptocurrency
-
-A new Flutter project.
+![](https://github.com/Liqiankun/dl_cryptocurrency/blob/master/repo.png)
 
 ## Getting Started
 
